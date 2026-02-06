@@ -1024,18 +1024,21 @@
 <p>This page contains the most common steps for setting up and getting
 started with your AICR account. We provide this page as a
 convenient reference to get started.</p>
-<p>Sections that are institution-specific will be shown under a list of tabs. Click on the tab for your institution and the rest of the page will stay on that tab.</p>
 <h2 id="getting-an-account">Getting an Account<a class="headerlink" href="#getting-an-account" title="Permanent link">&para;</a></h2>
 <p>AICR is currently available to initial beta-test users. Each institution may have its own process for getting an account. When it is available we will include links to that information here.</p>
 <h2 id="logging-in">Logging In<a class="headerlink" href="#logging-in" title="Permanent link">&para;</a></h2>
 <p>The first thing you should do when you get a new account is verify that
 you can log in. The different ORCD systems provide multiple ways to log in, including both ssh and web portals. Links to instructions for the different systems are below.</p>
 <h3 id="ondemand-portal">OnDemand Portal<a class="headerlink" href="#ondemand-portal" title="Permanent link">&para;</a></h3>
-<p>You can log into OnDemand Web Portal with the link: <a href="">ONDEMAND_URL</a></p>
+<p>You can log into OnDemand Web Portal using your institutional credentials. Once the OnDemand Portal is available we will put the URL here.</p>
+<!-- TODO: Add OnDemand URL -->
+
 <h3 id="terminal-with-ssh">Terminal with SSH<a class="headerlink" href="#terminal-with-ssh" title="Permanent link">&para;</a></h3>
 <p>Log into AICR with the following command in a terminal window. Replace <code>USERNAME</code> below with your AICR username.</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>USERNAME@<span class="o">[</span>aicr-login-hostname<span class="o">]</span>
 </span></code></pre></div>
+<!-- TODO: Update with Login node hostname -->
+
 <p>Your AICR username is similar to but not the same as your institutional username. It would have been given to you when your account was created. If you are prompted for a password enter your institutional password.</p>
 <h2 id="shared-hpc-clusters">Shared HPC Clusters<a class="headerlink" href="#shared-hpc-clusters" title="Permanent link">&para;</a></h2>
 <p>AICR is a shared HPC cluster. You are sharing this
@@ -1171,12 +1174,18 @@ to your home directory. The primary method we recommend for copying your files t
 <p>To transfer a file from your computer to AICR:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>scp<span class="w"> </span>&lt;local-file-name&gt;<span class="w"> </span>USERNAME@<span class="o">[</span>aicr-login-hostname<span class="o">]</span>:&lt;path-to-aicr-dir&gt;
 </span></code></pre></div>
+<!-- TODO: Update with Login node hostname -->
+
 <p>To transfer a file from an ORCD system to your computer:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>scp<span class="w"> </span>USERNAME@<span class="o">[</span>aicr-login-hostname<span class="o">]</span>:&lt;path-to-supercloud-dir&gt;/&lt;file-name&gt;<span class="w"> </span>&lt;path-to-local-dest&gt;
 </span></code></pre></div>
+<!-- TODO: Update with Login node hostname -->
+
 <p>Similar to <code>cp</code>, use the <code>-r</code> flag to copy over an entire directory and its contents. </p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>scp<span class="w"> </span>-r<span class="w"> </span>&lt;local-dir-name&gt;<span class="w"> </span>USERNAME@<span class="o">[</span>aicr-login-hostname<span class="o">]</span>:&lt;path-to-supercloud-dir&gt;
 </span></code></pre></div>
+<!-- TODO: Update with Login node hostname -->
+
 <p>The <code>rsync</code> command can be used similarly and has some additional flags you can use. It also can be used to transfer only new or modified files to the destination, which makes it easy to keep a directory in "sync".</p>
 <h2 id="running-your-first-job">Running your First Job<a class="headerlink" href="#running-your-first-job" title="Permanent link">&para;</a></h2>
 <p>At this point you may want to do a test-run of your code. You always
@@ -1188,6 +1197,8 @@ session to run your code in by executing the command:</p>
 <div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Requesting one core and one GPU for an interactive job for 1 hour</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>salloc<span class="w"> </span>-t<span class="w"> </span><span class="m">01</span>:00:00<span class="w"> </span>-p<span class="w"> </span>rtx-devel<span class="w"> </span>-G<span class="w"> </span><span class="m">1</span>
 </span></code></pre></div>
+<!-- TODO: Check salloc command -->
+
 <p>After you run this command you will be on a compute node and you can do
 a test-run of your code. This command will allocate one core and one GPU to your
 job. If your test code needs additional cores or uses a lot of
@@ -1215,7 +1226,7 @@ memory, you should request additional resources as needed.</p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 6, 2026 15:35:07 UTC">February 6, 2026</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 6, 2026 19:54:50 UTC">February 6, 2026</span>
   </span>
 
     
